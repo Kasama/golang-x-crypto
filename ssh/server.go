@@ -610,12 +610,16 @@ userAuthLoop:
 
 			pubKeyData, payload, ok := parseString(payload)
 			if !ok {
-				return nil, parseError(msgUserAuthRequest)
+				// return nil, parseError(msgUserAuthRequest)
+				authErr = parseError(msgUserAuthRequest)
+				break
 			}
 
 			pubKey, err := ParsePublicKey(pubKeyData)
 			if err != nil {
-				return nil, err
+				// return nil, err
+				authErr = fmt.Errorf("ssh: failed to parse publicKey: %s", err)
+				break
 			}
 
 			candidate, ok := cache.get(s.user, pubKeyData)
