@@ -10,13 +10,13 @@
 // for their specific task. If you are required to interoperate with OpenPGP
 // systems and need a maintained package, consider a community fork.
 // See https://golang.org/issue/44226.
-package armor // import "golang.org/x/crypto/openpgp/armor"
+package armor // import "github.com/Kasama/golang-x-crypto/openpgp/armor"
 
 import (
 	"bufio"
 	"bytes"
 	"encoding/base64"
-	"golang.org/x/crypto/openpgp/errors"
+	"github.com/Kasama/golang-x-crypto/openpgp/errors"
 	"io"
 )
 
